@@ -7,6 +7,10 @@ import java.lang.reflect.Method;
 public class TestCase {
     public String methodName;
 
+    public TestCase(String methodName) {
+        this.methodName = methodName;
+    }
+
     public void run() {
         Class c = this.getClass();
         try {

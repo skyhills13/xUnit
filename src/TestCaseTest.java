@@ -4,7 +4,7 @@
 public class TestCaseTest extends TestCase {
 
     public TestCaseTest(String methodName){
-        this.methodName = methodName;
+        super(methodName);
     }
 
     public void testRunning(){
