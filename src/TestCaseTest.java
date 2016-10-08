@@ -11,6 +11,6 @@ public class TestCaseTest extends TestCase {
     public void testTemplateMethod(){
         test = new WasRun("testMethod");
         test.run();
-        assert "setUp testMethod ".equals(test.log);
+        assert "setUp testMethod tearDown ".equals(test.log);
     }
 }

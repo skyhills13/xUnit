@@ -20,6 +20,11 @@ public abstract class TestCase {
         } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e ) {
             e.printStackTrace();
         }
+        tearDown();
+    }
+
+    public void tearDown() {
+
     }
 
     public void setUp(){
