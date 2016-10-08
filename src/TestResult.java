@@ -2,9 +2,17 @@
  * Created by soeunpark on 2016. 10. 8..
  */
 public class TestResult {
-    private String summary = "1 run, 0 failed";
+    private int runCount;
+
+    public TestResult(){
+        runCount = 0;
+    }
 
     public String getSummary(){
-        return summary;
+        return runCount + " run, 0 failed";
+    }
+
+    public void testStarted(){
+        runCount += 1;
     }
 }

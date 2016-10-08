@@ -17,6 +17,6 @@ public class TestCaseTest extends TestCase {
     public void testResult(){
         test = new WasRun("testMethod");
         TestResult testResult = test.run();
-        assert testResult.getSummary().equals("1 run, 0 failed");
+        assert "1 run, 0 failed".equals(testResult.getSummary());
     }
 }

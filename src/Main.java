@@ -24,5 +24,10 @@ public class Main {
          */
         TestCaseTest testCaseTest2 = new TestCaseTest("testTemplateMethod");
         testCaseTest2.run();
+
+        TestCaseTest testCaseTest3 = new TestCaseTest("testResult");
+        testCaseTest3.run();
+
+
     }
 }

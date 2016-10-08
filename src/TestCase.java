@@ -5,13 +5,15 @@ import java.lang.reflect.Method;
  * Created by soeunpark on 2016. 10. 8..
  */
 public abstract class TestCase {
-    public String methodName;
+    private String methodName;
 
     public TestCase(String methodName) {
         this.methodName = methodName;
     }
 
     public TestResult run() {
+        TestResult result = new TestResult();
+        result.testStarted();
         setUp();
         Class c = this.getClass();
         try {
@@ -21,7 +23,7 @@ public abstract class TestCase {
             e.printStackTrace();
         }
         tearDown();
-        return new TestResult();
+        return result;
     }
 
     public void tearDown() {
