@@ -28,6 +28,8 @@ public class Main {
         TestCaseTest testCaseTest3 = new TestCaseTest("testResult");
         testCaseTest3.run();
 
+        TestCaseTest testCaseTest4 = new TestCaseTest("testFailedResult");
+        testCaseTest4.run();
 
     }
 }
