@@ -8,18 +8,9 @@ public class TestCaseTest extends TestCase {
         super(methodName);
     }
 
-    public void testRunning(){
-        test.run();
-        assert true : test.wasRun;
-    }
-
-    public void testSetUp(){
-        test.run();
-        assert "setUp ".equals(test.log);
-    }
-
-    @Override
-    public void setUp(){
+    public void testTemplateMethod(){
         test = new WasRun("testMethod");
+        test.run();
+        assert "setUp testMethod ".equals(test.log);
     }
 }

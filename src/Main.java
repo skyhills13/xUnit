@@ -18,10 +18,7 @@ public class Main {
          *              => WasRun 인스턴스는 "testMethod"을 인자로 넣었으므로 testMethod의 내용인 wasRun = true이 됨
          *          b. wasRun 값이 true인지 확인
          */
-        TestCaseTest testCaseTest1 = new TestCaseTest("testRunning");
-        testCaseTest1.run();
-
-        TestCaseTest testCaseTest2 = new TestCaseTest("testSetUp");
+        TestCaseTest testCaseTest2 = new TestCaseTest("testTemplateMethod");
         testCaseTest2.run();
     }
 }
