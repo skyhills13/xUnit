@@ -18,6 +18,10 @@ public class Main {
          *              => WasRun 인스턴스는 "testMethod"을 인자로 넣었으므로 testMethod의 내용인 wasRun = true이 됨
          *          b. wasRun 값이 true인지 확인
          */
+        /**
+         * 부연 설명
+         * WasRun의 testMethod는 JUnit에서 각 테스트 메서드 역할을 하고 있는 셈. (내가 건드리지 않는 프레임워크 단의)
+         */
         TestCaseTest testCaseTest2 = new TestCaseTest("testTemplateMethod");
         testCaseTest2.run();
     }

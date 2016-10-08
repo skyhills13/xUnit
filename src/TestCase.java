@@ -11,7 +11,7 @@ public abstract class TestCase {
         this.methodName = methodName;
     }
 
-    public void run() {
+    public TestResult run() {
         setUp();
         Class c = this.getClass();
         try {
@@ -21,6 +21,7 @@ public abstract class TestCase {
             e.printStackTrace();
         }
         tearDown();
+        return new TestResult();
     }
 
     public void tearDown() {
