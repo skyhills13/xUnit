@@ -3,7 +3,7 @@
  */
 public class WasRun extends TestCase{
     public boolean wasRun;
-    public boolean wasSetUp;
+    public String log;
 
     public WasRun(String methodName){
         super(methodName);
@@ -11,11 +11,12 @@ public class WasRun extends TestCase{
 
     public void testMethod(){
         wasRun = true;
+        log = log + "testMethod ";
     }
 
     @Override
     public void setUp(){
-        wasSetUp = true;
         wasRun = false;
+        log = "setUp ";
     }
 }

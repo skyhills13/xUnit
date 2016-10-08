@@ -15,7 +15,7 @@ public class TestCaseTest extends TestCase {
 
     public void testSetUp(){
         test.run();
-        assert test.wasSetUp;
+        assert "setUp ".equals(test.log);
     }
 
     @Override
