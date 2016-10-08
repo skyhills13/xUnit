@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 /**
  * Created by soeunpark on 2016. 10. 8..
  */
-public class TestCase {
+public abstract class TestCase {
     public String methodName;
 
     public TestCase(String methodName) {
@@ -12,6 +12,7 @@ public class TestCase {
     }
 
     public void run() {
+        setUp();
         Class c = this.getClass();
         try {
             Method method = c.getMethod(this.methodName);
@@ -19,5 +20,9 @@ public class TestCase {
         } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e ) {
             e.printStackTrace();
         }
+    }
+
+    public void setUp(){
+
     }
 }

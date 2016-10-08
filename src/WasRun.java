@@ -7,10 +7,15 @@ public class WasRun extends TestCase{
 
     public WasRun(String methodName){
         super(methodName);
-        wasRun = false;
     }
 
     public void testMethod(){
         wasRun = true;
+    }
+
+    @Override
+    public void setUp(){
+        wasSetUp = true;
+        wasRun = false;
     }
 }

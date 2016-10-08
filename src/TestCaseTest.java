@@ -9,7 +9,8 @@ public class TestCaseTest extends TestCase {
 
     public void testRunning(){
         WasRun test = new WasRun("testMethod");
-        assert false : test.wasRun;
+        //test.run()에서 무조건 setUp을 호출해서 wasRun을 false로 넣었기 때문에 필요 없어짐
+        //assert false : test.wasRun;
         test.run();
         assert true : test.wasRun;
     }
