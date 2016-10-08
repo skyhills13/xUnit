@@ -10,19 +10,17 @@ public abstract class TestCase {
         this.methodName = methodName;
     }
 
-    public TestResult run() {
-        TestResult result = new TestResult();
-        result.testStarted();
+    public void run(TestResult testResult) {
+        testResult.testStarted();
         setUp();
         Class c = this.getClass();
         try {
             Method method = c.getMethod(this.methodName);
             method.invoke(this);
         } catch (Exception e ) {
-            result.testFailed();
+            testResult.testFailed();
         }
         tearDown();
-        return result;
     }
 
     public void tearDown() {

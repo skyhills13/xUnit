@@ -17,21 +17,22 @@ public class Main {
          *              => wasSetUp = true; wasRun = false;
          *              => WasRun 인스턴스는 "testMethod"을 인자로 넣었으므로 testMethod의 내용인 wasRun = true이 됨
          *          b. wasRun 값이 true인지 확인
+         *========
+         * 4. exception handling이후, run중에 assert가 fail나면 프로그램이 종료되지 않고 failedCount에 들어간다.
+         *      => InvocationTargetException에 잡힘(?)
          */
         /**
          * 부연 설명
          * WasRun의 testMethod는 JUnit에서 각 테스트 메서드 역할을 하고 있는 셈. (내가 건드리지 않는 프레임워크 단의)
          */
-        TestCaseTest testCaseTest2 = new TestCaseTest("testTemplateMethod");
-        testCaseTest2.run();
-
-        TestCaseTest testCaseTest3 = new TestCaseTest("testResult");
-        testCaseTest3.run();
-
-        TestCaseTest testCaseTest4 = new TestCaseTest("testFailedResult");
-        testCaseTest4.run();
-
-        TestCaseTest testCaseTest5 = new TestCaseTest("testFailedResultFormatting");
-        testCaseTest5.run();
+        TestSuite testSuite = new TestSuite();
+        testSuite.add(new TestCaseTest("testTemplateMethod"));
+        testSuite.add(new TestCaseTest("testResult"));
+        testSuite.add(new TestCaseTest("testFailedResultFormatting"));
+        testSuite.add(new TestCaseTest("testFailedResult"));
+        testSuite.add(new TestCaseTest("testSuite"));
+        TestResult testResult = new TestResult();
+        testSuite.run(testResult);
+        System.out.println(testResult.getSummary());
     }
 }
