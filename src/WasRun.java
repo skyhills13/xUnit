@@ -3,13 +3,13 @@
  */
 public class WasRun extends TestCase{
     public boolean wasRun;
+    public boolean wasSetUp;
 
     public WasRun(String methodName){
         super(methodName);
         wasRun = false;
     }
 
-    //https://docs.oracle.com/javase/tutorial/reflect/member/methodInvocation.html
     public void testMethod(){
         wasRun = true;
     }

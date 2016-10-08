@@ -8,9 +8,15 @@ public class TestCaseTest extends TestCase {
     }
 
     public void testRunning(){
-        WasRun wasRun = new WasRun("testMethod");
-        assert false : wasRun.wasRun;
-        wasRun.run();
-        assert true : wasRun.wasRun;
+        WasRun test = new WasRun("testMethod");
+        assert false : test.wasRun;
+        test.run();
+        assert true : test.wasRun;
+    }
+
+    public void testSetUp(){
+        WasRun test = new WasRun("testMethod");
+        test.run();
+        assert test.wasSetUp;
     }
 }
