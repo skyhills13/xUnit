@@ -31,5 +31,7 @@ public class Main {
         TestCaseTest testCaseTest4 = new TestCaseTest("testFailedResult");
         testCaseTest4.run();
 
+        TestCaseTest testCaseTest5 = new TestCaseTest("testFailedResultFormatting");
+        testCaseTest5.run();
     }
 }

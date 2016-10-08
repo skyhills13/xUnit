@@ -1,4 +1,3 @@
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
@@ -19,8 +18,8 @@ public abstract class TestCase {
         try {
             Method method = c.getMethod(this.methodName);
             method.invoke(this);
-        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e ) {
-            e.printStackTrace();
+        } catch (Exception e ) {
+            result.testFailed();
         }
         tearDown();
         return result;
