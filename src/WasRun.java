@@ -1,16 +1,8 @@
 /**
  * Created by soeunpark on 2016. 10. 8..
  */
-public class WasRun extends TestCase{
-    public String log;
-
-    public WasRun(String methodName){
-        super(methodName);
-    }
-
-    public void testMethod(){
-        log = log + "testMethod ";
-    }
+public abstract class WasRun extends TestCase{
+    protected String log;
 
     @Override
     public void setUp(){
@@ -22,7 +14,7 @@ public class WasRun extends TestCase{
         log = log + "tearDown ";
     }
 
-    public void testBrokenMethod() throws Exception {
-        throw new Exception();
+    public String getLog(){
+        return log;
     }
 }
